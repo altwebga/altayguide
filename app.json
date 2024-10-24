@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "HelloWorld",
-    "slug": "expo-template-default",
+    "name": "altayguide",
+    "slug": "altayguide",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -13,13 +13,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kosmos.altayguide"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kosmos.altayguide"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +33,18 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d7cc76cf-0492-468d-a632-225932c24ec7"
+      }
+    },
+    "owner": "kos-mos",
+    "updates": {
+      "url": "https://u.expo.dev/d7cc76cf-0492-468d-a632-225932c24ec7"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
