@@ -1,4 +1,4 @@
-import Header from "@/components/shared/header";
+import { Header } from "@/components/shared/header";
 
 export default function FrontendLayout({
   children,

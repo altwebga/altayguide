@@ -8,7 +8,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
@@ -47,13 +46,13 @@ const navLinks = {
   ],
 };
 
-export default function HeaderNav() {
+export function HeaderNav() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Найти</NavigationMenuTrigger>
-          <NavigationMenuContent className="flex flex-col gap-2">
+          <NavigationMenuContent className="flex flex-col gap-2 min-h-[300px] min-w-[400px]">
             {navLinks.explore.map((link) => (
               <Link href={link.href} key={link.title}>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -66,7 +65,7 @@ export default function HeaderNav() {
         <NavigationMenuItem>Вопрос - Ответ</NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>О проекте</NavigationMenuTrigger>
-          <NavigationMenuContent className="flex flex-col gap-2 ml-4">
+          <NavigationMenuContent className="flex flex-col gap-2 min-h-[300px] min-w-[400px]">
             {navLinks.about.map((link) => (
               <Link href={link.href} key={link.title}>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
