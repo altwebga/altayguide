@@ -8,6 +8,9 @@ export default function Header() {
           <span>Logo</span>
         </div>
         <HeaderNav />
+        <div>
+          <span>Actions</span>
+        </div>
       </div>
     </header>
   );

@@ -8,7 +8,7 @@ export default function FrontendLayout({
   return (
     <>
       <Header />
-      {children}
+      <main className="container px-4 mx-auto">{children}</main>
     </>
   );
 }
