@@ -3,13 +3,13 @@ export function Hero() {
     <>
       <div className="h-[calc(100vh-4rem)] flex flex-col items-center justify-center w-full">
         <div className="container px-4 mx-auto">
-          <h1 className="max-w-xl p-6 bg-background/20">
+          <h1 className="max-w-xl p-10 bg-background/50">
             Путеводитель по Республике Алтай и Алтайскому краю
           </h1>
         </div>
       </div>
       <video
-        src="/videos/hero7.mp4"
+        src="/videos/altay.webm"
         loop
         autoPlay
         muted
