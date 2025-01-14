@@ -1,7 +1,11 @@
+import { Header } from "@/components/shared/header";
+import { Hero } from "@/components/shared/hero";
+
 export default function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <>
+      <Header />
+      <Hero />
+    </>
   );
 }
