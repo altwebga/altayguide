@@ -45,4 +45,7 @@ body {
   blockquote {
     @apply mt-6 border-l-2 pl-6 italic;
   }
+  button {
+    @apply cursor-pointer bg-black text-white hover:bg-slate-900 shadow-sm px-4 py-2 rounded-md;
+  }
 }
