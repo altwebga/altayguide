@@ -32,7 +32,7 @@ export function Header() {
         </Link>
 
         <div className="flex items-center gap-8">
-          <Navigation navLinks={navLinks} />
+          <Navigation navLinks={navLinks} className="hidden md:flex" />
           <Button>Войти</Button>
         </div>
       </div>

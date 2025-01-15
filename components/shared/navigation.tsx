@@ -8,12 +8,13 @@ type NavigationProps = {
     title: string;
     href: string;
   }[];
+  className?: string;
 };
 
-export function Navigation({ navLinks }: NavigationProps) {
+export function Navigation({ navLinks, className }: NavigationProps) {
   const pathname = usePathname();
   return (
-    <nav>
+    <nav className={className}>
       <ul className="flex gap-4">
         {navLinks.map((link) => (
           <li key={link.title}>
