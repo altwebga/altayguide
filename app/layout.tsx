@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import { AppProviders } from "@/components/shared/app-providers";
+import { AppProvider } from "@/providers/app-providers";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const tildaSans = localFont({
-  src: "../public/fonts/TildaSans-VF.woff",
-  variable: "--font-tilda-sans",
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
   weight: "100 900",
 });
 
@@ -20,9 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" suppressHydrationWarning>
-      <body className={`${tildaSans.variable} antialiased`}>
-        <AppProviders>{children}</AppProviders>
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );
