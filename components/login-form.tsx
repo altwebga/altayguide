@@ -10,9 +10,7 @@ export function LoginForm() {
           action={async () => {
             "use server";
             try {
-              await signIn(provider.id, {
-                redirectTo: "/dashboard",
-              });
+              await signIn(provider.id);
             } catch (error) {
               if (error instanceof AuthError) {
                 return redirect(`${"/auth/error"}?error=${error.type}`);
