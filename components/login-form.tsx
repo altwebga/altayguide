@@ -1,6 +1,9 @@
 import { signIn, providerMap } from "@/auth";
 import { AuthError } from "next-auth";
 import { redirect } from "next/navigation";
+
+import { Button } from "./ui/button";
+
 export function LoginForm() {
   return (
     <div className="flex flex-col gap-2 mt-2">
@@ -19,9 +22,9 @@ export function LoginForm() {
             }
           }}
         >
-          <button type="submit" className="w-full">
+          <Button type="submit" className="w-full">
             <span>Войти через {provider.name}</span>
-          </button>
+          </Button>
         </form>
       ))}
     </div>
