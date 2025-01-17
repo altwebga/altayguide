@@ -1,12 +1,13 @@
+// components/AppProvider.tsx
 "use client";
 
-import * as React from "react";
+import React from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { SessionStoreProvider } from "@/providers/session-store-provider";
 
-export function AppProvider({
+export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
-}: React.ComponentProps<typeof NextThemesProvider>) {
+}) => {
   return (
     <NextThemesProvider
       attribute="class"
@@ -17,4 +18,4 @@ export function AppProvider({
       <SessionStoreProvider>{children}</SessionStoreProvider>
     </NextThemesProvider>
   );
-}
+};
