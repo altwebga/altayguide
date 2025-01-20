@@ -1,51 +1,41 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { type LucideIcon } from "lucide-react";
 
+import { Collapsible } from "@/components/ui/collapsible";
 import {
   SidebarGroup,
   SidebarGroupLabel,
   SidebarMenu,
+  SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { cn } from "@/lib/utils";
 
-const navItems = [
-  {
-    name: "Туры",
-    href: "/",
-  },
-  {
-    name: "Экскурсии",
-    href: "/",
-  },
-  {
-    name: "Достопримечательности",
-    href: "/",
-  },
-  {
-    name: "Отели и турбазы",
-    href: "/",
-  },
-  {
-    name: "События",
-    href: "/",
-  },
-];
-
-export function NavMain() {
-  const pathname = usePathname();
+export function NavMain({
+  items,
+}: {
+  items: {
+    title: string;
+    url: string;
+    icon?: LucideIcon;
+    isActive?: boolean;
+  }[];
+}) {
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+      <SidebarGroupLabel>Платформа</SidebarGroupLabel>
       <SidebarMenu>
-        {navItems.map((item) => (
-          <SidebarMenuItem
-            key={item.name}
-            className={cn({ "bg-muted": pathname === item.href })}
-          >
-            <Link href={item.href}>{item.name}</Link>
-          </SidebarMenuItem>
+        {items.map((item) => (
+          <Collapsible key={item.title} asChild className="group/collapsible">
+            <SidebarMenuItem>
+              <Link href={item.url}>
+                <SidebarMenuButton tooltip={item.title}>
+                  {item.icon && <item.icon />}
+                  {item.title}
+                </SidebarMenuButton>
+              </Link>
+            </SidebarMenuItem>
+          </Collapsible>
         ))}
       </SidebarMenu>
     </SidebarGroup>
